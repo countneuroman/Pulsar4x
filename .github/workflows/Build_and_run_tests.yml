@@ -27,9 +27,9 @@ jobs:
       - name: Run tests
         uses: zyborg/dotnet-tests-report@v1
         with:
-        project_path: Pulsar4X/Pulsar4X.Tests
-        report_name: Pulsar4X_Tests
-        report_title: Pulsar4X Tests on windows
+          project_path: Pulsar4X/Pulsar4X.Tests
+          report_name: Pulsar4X_Tests
+          report_title: Pulsar4X Tests on windows
 #        github_token: ${{ secrets.GITHUB_TOKEN }}
                 
 #      - name: Run tests
