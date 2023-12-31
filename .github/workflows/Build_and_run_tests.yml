@@ -2,9 +2,9 @@ name: Build and run Pulsar4X tests
 
 on:
   push:
-    branches: [ DevBranch ]
+    branches: [ AddGithubActionsTestReport ]
   pull_request:
-    branches: [ DevBranch ]
+    branches: [ AddGithubActionsTestReport ]
 
 jobs:
   windows-server-2022:
@@ -25,10 +25,18 @@ jobs:
           dotnet build --no-restore
           
       - name: Run tests
-        shell: pwsh
-        run: |
-          cd Pulsar4X
-          dotnet test --no-restore
+        uses: zyborg/dotnet-tests-report@v1
+        with:
+        project_path: Pulsar4X/Pulsar4X.Tests
+        report_name: Pulsar4X_Tests
+        report_title: Pulsar4X Tests on windows
+#        github_token: ${{ secrets.GITHUB_TOKEN }}
+                
+#      - name: Run tests
+#        shell: pwsh
+#        run: |
+#          cd Pulsar4X
+#          dotnet test --no-restore
 
   ubuntu-22:
     runs-on: ubuntu-22.04
