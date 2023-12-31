@@ -31,6 +31,11 @@ jobs:
           report_name: Pulsar4X_Tests
           report_title: Pulsar4X Tests on windows
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          skip_check_run: true
+          gist_name: Pulsar4X_Tests_windows.md
+          gist_badge_label: 'Pulsar4X: %Counters_passed%/%Counters_total%'
+          gist_token: ${{ secrets.GIST_TOKEN }}
+          
                 
 #      - name: Run tests
 #        shell: pwsh
