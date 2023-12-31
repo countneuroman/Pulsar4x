@@ -30,7 +30,7 @@ jobs:
           project_path: Pulsar4X/Pulsar4X.Tests
           report_name: Pulsar4X_Tests
           report_title: Pulsar4X Tests on windows
-#        github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
                 
 #      - name: Run tests
 #        shell: pwsh
