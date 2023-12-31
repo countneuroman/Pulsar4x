@@ -25,7 +25,7 @@ jobs:
           dotnet build --no-restore
           
       - name: Run tests
-        uses: zyborg/dotnet-tests-report@v1
+        uses: zyborg/dotnet-tests-report@v1.4.4
         with:
           project_path: Pulsar4X/Pulsar4X.Tests
           report_name: Pulsar4X_Tests
