@@ -33,7 +33,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           skip_check_run: true
           set_check_status_from_test_outcome: true
-          gist_name: Pulsar4X_Tests_windows.md
+          gist_name: pulsar_tests_report_windows.md
           gist_badge_label: 'Pulsar4X: %Counters_passed%/%Counters_total%'
           gist_token: ${{ secrets.GIST_TOKEN }}
           
@@ -66,6 +66,19 @@ jobs:
       run: |
         cd Pulsar4X
         dotnet test --no-restore
+        
+    - name: Run tests
+      uses: zyborg/dotnet-tests-report@v1.4.4
+      with:
+        project_path: Pulsar4X/Pulsar4X.Tests
+        report_name: Pulsar4X_Tests
+        report_title: Pulsar4X Tests on windows
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        skip_check_run: true
+        set_check_status_from_test_outcome: true
+        gist_name: pulsar_tests_report_linux.md
+        gist_badge_label: 'Pulsar4X: %Counters_passed%/%Counters_total%'
+        gist_token: ${{ secrets.GIST_TOKEN }}
   
   macOS-12:
     runs-on: macos-12
